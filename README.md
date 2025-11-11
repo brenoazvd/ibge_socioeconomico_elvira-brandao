@@ -14,12 +14,25 @@ Os notebooks incluem **visualizações interativas**, **correlações estatísti
 
 ---
 
-## 🧩 Estrutura do repositório
+## 🧩 Estrutura do Repositório
 
-- `analise_financeira_chacara.ipynb` → Análises socioeconômicas da unidade **Chácara Santo Antônio**  
-- `analise_financeira_morumbi.ipynb` → Análises socioeconômicas da unidade **Morumbi (Vila Suzana)**  
-- `mapa_interativo_chacara.html` e `mapa_interativo_morumbi.html` → Mapas interativos com dados populacionais e de renda  
-- Scripts auxiliares para limpeza e padronização dos dados  
+O repositório está organizado em notebooks e arquivos complementares que documentam todo o processo analítico — da coleta e limpeza de dados à geração de visualizações e insights.
+
+| Tipo de Arquivo | Nome | Descrição |
+|------------------|------|------------|
+| 📓 Notebook | `analise_financeira_chacara.ipynb` | Contém as análises socioeconômicas e populacionais da região de **Chácara Santo Antônio**, incluindo distribuição de renda, densidade populacional e correlação entre variáveis. |
+| 📓 Notebook | `analise_financeira_morumbi.ipynb` | Realiza as mesmas análises para a unidade **Morumbi (Vila Suzana)**, permitindo comparações diretas entre as duas regiões. |
+| 🌎 Mapa Interativo | `mapa_interativo_chacara.html` | Visualização interativa da distribuição de renda e população no entorno da unidade Chácara. |
+| 🌎 Mapa Interativo | `mapa_interativo_morumbi.html` | Visualização interativa da região do Morumbi, destacando contrastes socioeconômicos e padrões territoriais. |
+| ⚙️ Scripts de Apoio | `arrumar_form_morumbi.py`, `corrigir_latlon.py`, `preencher_endereco_por_latlon.py` | Scripts auxiliares responsáveis por **padronização dos dados**, **correção de coordenadas geográficas** e **preenchimento automático de endereços** via APIs. |
+
+---
+
+Esses arquivos trabalham em conjunto para:
+- 🧼 **Limpar e estruturar** dados censitários do IBGE;  
+- 📊 **Gerar estatísticas e indicadores** sobre renda e população;  
+- 📈 **Explorar correlações** e segmentar regiões com o algoritmo **K-means**;  
+- 🗺️ **Visualizar insights geográficos** de forma interativa, com mapas dinâmicos.  
 
 ---
 
@@ -37,6 +50,12 @@ Com base nas análises realizadas, busca-se **compreender melhor o perfil financ
 ---
 
 📍 *Projeto desenvolvido com foco em dados abertos, transparência e apoio à tomada de decisão estratégica na educação.*
+
+---
+
+✍️ **Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd)**  
+📅 São Paulo — 2025  
+💡 *Análise de Dados e Inteligência Educacional*
 
 ---
 
