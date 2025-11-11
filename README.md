@@ -1,4 +1,4 @@
-# 🧭 ibge_socioeconomico_elvira-brandao
+# ibge_socioeconomico_elvira-brandao
 
 Análises socioeconômicas e financeiras baseadas em dados do **IBGE (Censo 2022)** para as regiões do **Colégio Elvira Brandão — Chácara Santo Antônio e Morumbi (Vila Suzana)**, com foco em **renda**, **população** e **perfil econômico local**.
 
@@ -37,3 +37,9 @@ Com base nas análises realizadas, busca-se **compreender melhor o perfil financ
 ---
 
 📍 *Projeto desenvolvido com foco em dados abertos, transparência e apoio à tomada de decisão estratégica na educação.*
+
+---
+
+✍️ **Feito por [Breno Rodrigues Azevedo](https://github.com/)**  
+📅 São Paulo — 2025  
+💡 *Análise de Dados e Inteligência Educacional*
