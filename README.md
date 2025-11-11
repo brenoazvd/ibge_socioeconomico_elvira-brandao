@@ -40,6 +40,6 @@ Com base nas análises realizadas, busca-se **compreender melhor o perfil financ
 
 ---
 
-✍️ **Feito por [Breno Rodrigues Azevedo]([https://github.com/brenoazvd])**  
+✍️ **Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd)**  
 📅 São Paulo — 2025  
 💡 *Análise de Dados e Inteligência Educacional*
