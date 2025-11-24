@@ -24,11 +24,11 @@ O repositório está organizado em notebooks e arquivos complementares que docum
 | 📓 Notebook | `analise_financeira_morumbi.ipynb` | Realiza as mesmas análises para a unidade **Morumbi (Vila Suzana)**, permitindo comparações diretas entre as duas regiões. |
 | 🌎 Mapa Interativo | `mapa_interativo_chacara.html` | Visualização interativa da distribuição de renda e população no entorno da unidade Chácara. |
 | 🌎 Mapa Interativo | `mapa_interativo_morumbi.html` | Visualização interativa da região do Morumbi, destacando contrastes socioeconômicos e padrões territoriais. |
-| ⚙️ Scripts de Apoio | `arrumar_form_morumbi.py`, `corrigir_latlon.py`, `preencher_endereco_por_latlon.py` | Scripts auxiliares responsáveis por **padronização dos dados**, **correção de coordenadas geográficas** e **preenchimento automático de endereços** via APIs. |
+| ⚙️ Scripts de Apoio | arquivos em `functions_base_corrections/` e `cod_testes/` | Scripts auxiliares responsáveis por **padronização dos dados**, **correção de coordenadas geográficas** e **preenchimento automático de endereços** via APIs. |
 
 ---
 
-Esses arquivos trabalham em conjunto para:
+Estes arquivos trabalham em conjunto para:
 - 🧼 **Limpar e estruturar** dados censitários do IBGE;  
 - 📊 **Gerar estatísticas e indicadores** sobre renda e população;  
 - 📈 **Explorar correlações** e segmentar regiões com o algoritmo **K-means**;  
@@ -56,3 +56,61 @@ Com base nas análises realizadas, busca-se **compreender melhor o perfil financ
 ✍️ **Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd)**  
 📅 São Paulo — 2025  
 💡 *Análise de Dados e Inteligência Educacional*
+
+---
+
+## O que mudou (Resumo das ações recentes)
+
+- **Atualização de caminhos CSV:** Notebooks em `analise_1.0/` agora usam caminhos relativos para os CSVs que estão na pasta raiz `filling_Ceps/`. Exemplo: `pd.read_csv('../filling_Ceps/Elvira Brandão Morumbi - ...csv')`.
+- **Restauração de notebooks:** Os notebooks `analise_financeira_morumbi.ipynb` e `analise_financeira_chacara.ipynb` foram recriados com estrutura JSON válida após sofrerem corrupção durante uma alteração de caminhos. Os novos arquivos contêm células mínimas de carregamento e exploração de dados para facilitar testes iniciais.
+- **Backups criados:** Antes da recriação foram gerados backups com timestamp (ex.: `analise_financeira_morumbi_backup_20251124_150557.ipynb` e `analise_financeira_chacara_backup_20251124_150557.ipynb`). Esses arquivos preservam o conteúdo corrompido para inspeção manual, se necessário.
+- **Scripts temporários limpos:** Scripts de correção temporários foram removidos da raiz do projeto após a restauração.
+
+---
+
+## Como abrir e testar os notebooks (rápido)
+
+- **Pré-requisitos:** Python 3.10+ (o projeto foi testado em 3.13.5), e pacotes comuns como `pandas`, `numpy`, `matplotlib`, `seaborn`, `folium`. Para instalar dependências rapidamente, por exemplo:
+
+```powershell
+python -m pip install pandas numpy matplotlib seaborn folium
+```
+
+- **Abrir notebook:** No VS Code ou Jupyter, abra `analise_1.0/analise_financeira_morumbi.ipynb` ou `analise_1.0/analise_financeira_chacara.ipynb`.
+- **Executar a primeira célula de carregamento:** Ela usa `csv_path = '../filling_Ceps/<arquivo.csv>'` — verifique que os arquivos CSV relevantes estão em `filling_Ceps/` na raiz do repositório.
+- **Exemplo de verificação manual em Python:**
+
+```python
+import pandas as pd
+df = pd.read_csv('../filling_Ceps/Elvira Brandão Morumbi - Euvira Brandão Dados ADS_coords_corrigidas_com_enderecos.csv')
+print(len(df), df.columns.tolist())
+```
+
+---
+
+## Backups & recuperação
+
+- Backups dos notebooks corrompidos estão localizados em `analise_1.0/` com sufixo `_backup_YYYYMMDD_HHMMSS.ipynb`. Recomendação: conservar esses arquivos até confirmar que as versões recriadas contém todo o conteúdo necessário.
+
+- Caso queira restaurar uma versão anterior completa, sugiro mover o backup para outro local e abrir no Jupyter Notebook para inspecionar manualmente.
+
+---
+
+## Observações e próximos passos sugeridos
+
+- **Verificar execução:** Execute as primeiras células dos dois notebooks recriados para confirmar que `pd.read_csv('../filling_Ceps/...')` carrega os CSVs corretamente. Relate qualquer `FileNotFoundError` com o caminho exato mostrado.
+- **Revisar conteúdo:** As versões recriadas são mínimas — se houver código perdido que precise ser retomado, abra os backups e copie trechos úteis manualmente.
+- **Commitar alterações:** Depois de validar localmente, recomendo commitar as mudanças e adicionar os notebooks ao controle de versão (se desejar incluir os notebooks completos no repositório). Exemplo de commit:
+
+```powershell
+git add README.md analise_1.0/analise_financeira_*.ipynb
+git commit -m "Atualiza README e restaura notebooks com caminhos relativos para filling_Ceps"
+```
+
+---
+
+Se quiser, eu posso:
+- Executar um teste rápido (rodar a célula de carregamento) em ambos os notebooks aqui e retornar o resultado; ou
+- Extrair trechos dos backups para tentar reconstruir mais conteúdo automaticamente.
+
+Escolha qual dessas ações prefere que eu faça a seguir.
