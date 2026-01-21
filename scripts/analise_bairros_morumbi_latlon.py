@@ -176,35 +176,53 @@ def main() -> int:
         raise ValueError("Colunas de latitude/longitude nao encontradas.")
 
     df["renda_media_num"] = df["renda_media"].apply(parse_renda_seguro)
-    for col in ("v01031_0_4anos", "v01032_5_9anos", "populacao_total"):
+    for col in ("v01031_0_4anos", "v01032_5_9anos", "v01033_10_14anos", "v01034_15_19anos", "populacao_total"):
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce")
         else:
             df[col] = np.nan
 
-    df["criancas_0_9"] = df["v01031_0_4anos"].fillna(0) + df["v01032_5_9anos"].fillna(0)
+    df["criancas_0_4"] = df["v01031_0_4anos"].fillna(0)
+    df["criancas_5_9"] = df["v01032_5_9anos"].fillna(0)
+    df["criancas_10_14"] = df["v01033_10_14anos"].fillna(0)
+    df["criancas_15_19"] = df["v01034_15_19anos"].fillna(0)
+    df["criancas_0_9"] = df["criancas_0_4"] + df["criancas_5_9"]
+    df["criancas_0_18"] = df["criancas_0_4"] + df["criancas_5_9"] + df["criancas_10_14"] + df["criancas_15_19"]
     df["renda_atualizada_2025"] = df["renda_media_num"] * args.inflation_factor
     df["distancia_km"] = haversine_km(
         df[lat_col], df[lon_col], args.escola_lat, args.escola_lon
     )
 
-    grouped = (
-        df.groupby(bairro_col, dropna=False)
-        .agg(
-            pontos=(bairro_col, "size"),
-            lat_mediana=(lat_col, "median"),
-            lon_mediana=(lon_col, "median"),
-            distancia_mediana_km=("distancia_km", "median"),
-            renda_mediana_2025=("renda_atualizada_2025", "median"),
-            criancas_0_9_mediana=("criancas_0_9", "median"),
-            populacao_mediana=("populacao_total", "median"),
+    agg = {
+        "pontos": (bairro_col, "size"),
+        "lat_mediana": (lat_col, "median"),
+        "lon_mediana": (lon_col, "median"),
+        "distancia_mediana_km": ("distancia_km", "median"),
+        "renda_mediana_2025": ("renda_atualizada_2025", "median"),
+        "populacao_mediana": ("populacao_total", "median"),
+    }
+    if args.unidade == "chacara":
+        agg.update(
+            {
+                "criancas_0_18_mediana": ("criancas_0_18", "median"),
+                "criancas_0_4_mediana": ("criancas_0_4", "median"),
+                "criancas_5_9_mediana": ("criancas_5_9", "median"),
+                "criancas_10_14_mediana": ("criancas_10_14", "median"),
+                "criancas_15_19_mediana": ("criancas_15_19", "median"),
+            }
         )
-        .reset_index()
-    )
+    else:
+        agg["criancas_0_9_mediana"] = ("criancas_0_9", "median")
+
+    grouped = df.groupby(bairro_col, dropna=False).agg(**agg).reset_index()
     grouped = grouped.rename(columns={bairro_col: "Bairro"})
-    grouped["score_trafego_2025"] = (
-        grouped["renda_mediana_2025"] * grouped["criancas_0_9_mediana"]
-    )
+    if args.unidade == "chacara":
+        criancas_score_col = "criancas_0_18_mediana"
+        score_formula = "renda_mediana_2025 * criancas_0_18_mediana"
+    else:
+        criancas_score_col = "criancas_0_9_mediana"
+        score_formula = "renda_mediana_2025 * criancas_0_9_mediana"
+    grouped["score_trafego_2025"] = grouped["renda_mediana_2025"] * grouped[criancas_score_col]
 
     if "cluster" in df.columns:
         cluster_stats = (
@@ -257,15 +275,20 @@ def main() -> int:
     report_path = output_dir / f"{args.unidade}_bairros_proximos_relatorio.md"
     html_path = output_dir / f"{args.unidade}_bairros_proximos_relatorio.html"
 
-    def build_table_view(
-        df_view: pd.DataFrame, include_cluster: bool
-    ) -> pd.DataFrame:
+    if args.unidade == "chacara":
+        criancas_col = "criancas_0_18_mediana"
+        criancas_label = "Criancas 0-18*"
+    else:
+        criancas_col = "criancas_0_9_mediana"
+        criancas_label = "Criancas 0-9"
+
+    def build_table_view(df_view: pd.DataFrame, include_cluster: bool) -> pd.DataFrame:
         cols = [
             "Bairro",
             "distancia_mediana_km",
             "score_trafego_2025",
             "renda_mediana_2025",
-            "criancas_0_9_mediana",
+            criancas_col,
             "populacao_mediana",
             "pontos",
         ]
@@ -275,7 +298,7 @@ def main() -> int:
         view["distancia_mediana_km"] = view["distancia_mediana_km"].apply(fmt_km)
         view["score_trafego_2025"] = view["score_trafego_2025"].apply(fmt_num)
         view["renda_mediana_2025"] = view["renda_mediana_2025"].apply(fmt_money)
-        view["criancas_0_9_mediana"] = view["criancas_0_9_mediana"].apply(fmt_num)
+        view[criancas_col] = view[criancas_col].apply(fmt_num)
         view["populacao_mediana"] = view["populacao_mediana"].apply(fmt_num, decimals=0)
         if include_cluster:
             view["cluster_predominante"] = view["cluster_predominante"].apply(fmt_num, decimals=0)
@@ -295,7 +318,7 @@ def main() -> int:
             "distancia_mediana_km": "Distancia",
             "score_trafego_2025": "Score",
             "renda_mediana_2025": "Renda mediana",
-            "criancas_0_9_mediana": "Criancas 0-9",
+            criancas_col: criancas_label,
             "populacao_mediana": "Populacao mediana",
             "pontos": "Pontos",
             "cluster_predominante": "Cluster predominante",
@@ -314,8 +337,15 @@ def main() -> int:
         f"Minimo de pontos por bairro: {args.min_pontos}",
         f"Coluna de bairro usada: {bairro_col}",
         "",
-        "Formula do score (nivel bairro): renda_mediana_2025 * criancas_0_9_mediana",
+        f"Formula do score (nivel bairro): {score_formula}",
         "",
+    ]
+    if args.unidade == "chacara":
+        report_lines += [
+            "Obs: faixa 15-19 anos inclui 19, usada como proxy para 15-18.",
+            "",
+        ]
+    report_lines += [
         "## Bairros mais proximos (por distancia mediana)",
         render_table_md(proximos, include_cluster),
         "",
@@ -354,7 +384,13 @@ def main() -> int:
         f"  <p class=\"meta\"><strong>Inflacao aplicada:</strong> {args.inflation_factor}</p>",
         f"  <p class=\"meta\"><strong>Minimo de pontos por bairro:</strong> {args.min_pontos}</p>",
         f"  <p class=\"meta\"><strong>Coluna de bairro usada:</strong> {bairro_col}</p>",
-        "  <p class=\"meta\"><strong>Formula do score:</strong> renda_mediana_2025 * criancas_0_9_mediana</p>",
+        f"  <p class=\"meta\"><strong>Formula do score:</strong> {score_formula}</p>",
+    ]
+    if args.unidade == "chacara":
+        html_lines += [
+            "  <p class=\"meta\"><strong>Obs:</strong> faixa 15-19 anos inclui 19, usada como proxy para 15-18.</p>",
+        ]
+    html_lines += [
         "  <h2>Bairros mais proximos (por distancia mediana)</h2>",
         render_table_html(proximos, include_cluster),
         "  <h2>Top score trafego (bairros com mais potencial)</h2>",
