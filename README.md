@@ -1,10 +1,10 @@
-# ibge_socioeconomico_elvira-brandao
+﻿# ibge_socioeconomico_elvira-brandao
 
 Análises socioeconômicas e financeiras baseadas em dados do **IBGE (Censo 2022)** para as regiões do **Colégio Elvira Brandão — Chácara Santo Antônio e Morumbi (Vila Suzana)**, com foco em **renda**, **população** e **perfil econômico local**.
 
 ---
 
-## 📘 Sobre o projeto
+## Sobre o projeto
 
 Este repositório reúne estudos analíticos desenvolvidos a partir de dados públicos do **IBGE (Censo 2022)**, com o objetivo de compreender o **perfil socioeconômico e populacional** das regiões em torno das unidades do **Colégio Elvira Brandão**.
 
@@ -14,103 +14,102 @@ Os notebooks incluem **visualizações interativas**, **correlações estatísti
 
 ---
 
-## 🧩 Estrutura do Repositório
+## Estrutura do repositório
 
 O repositório está organizado em notebooks e arquivos complementares que documentam todo o processo analítico — da coleta e limpeza de dados à geração de visualizações e insights.
 
-| Tipo de Arquivo | Nome | Descrição |
-|------------------|------|------------|
-| 📓 Notebook | `analise_financeira_chacara.ipynb` | Contém as análises socioeconômicas e populacionais da região de **Chácara Santo Antônio**, incluindo distribuição de renda, densidade populacional e correlação entre variáveis. |
-| 📓 Notebook | `analise_financeira_morumbi.ipynb` | Realiza as mesmas análises para a unidade **Morumbi (Vila Suzana)**, permitindo comparações diretas entre as duas regiões. |
-| 🌎 Mapa Interativo | `mapa_interativo_chacara.html` | Visualização interativa da distribuição de renda e população no entorno da unidade Chácara. |
-| 🌎 Mapa Interativo | `mapa_interativo_morumbi.html` | Visualização interativa da região do Morumbi, destacando contrastes socioeconômicos e padrões territoriais. |
-| ⚙️ Scripts de Apoio | arquivos em `functions_base_corrections/` e `cod_testes/` | Scripts auxiliares responsáveis por **padronização dos dados**, **correção de coordenadas geográficas** e **preenchimento automático de endereços** via APIs. |
+| Tipo | Arquivo | Descrição |
+| --- | --- | --- |
+| Notebook (Análise 1.0) | `analises/analise_1.0/morumbi_analise_financeira.ipynb` | Análises socioeconômicas da região Morumbi (Vila Suzana). |
+| Notebook (Análise 1.0) | `analises/analise_1.0/chacara_analise_financeira.ipynb` | Análises socioeconômicas da região Chácara Santo Antônio. |
+| Mapa interativo | `analises/analise_1.0/morumbi_mapa_interativo.html` | Mapa da renda e população no entorno do Morumbi. |
+| Mapa interativo | `analises/analise_1.0/chacara_mapa_interativo.html` | Mapa da renda e população no entorno da Chácara. |
+| Notebook (Análise 2.0) | `analises/analise_2.0/morumbi_analise_financeira_part2.ipynb` | Score de tráfego por CEP (Morumbi). |
+| Notebook (Análise 2.0) | `analises/analise_2.0/chacara_analise_financeira_part2.ipynb` | Score de tráfego por CEP (Chácara). |
+| Ranking por CEP | `analises/analise_2.0/morumbi_top_ceps_2025.csv` | CEPs ranqueados por score (Morumbi). |
+| Ranking por CEP | `analises/analise_2.0/chacara_top_ceps_2025.csv` | CEPs ranqueados por score (Chácara). |
+| Análise 3.0 (bairros) | `analises/analise_3.0/morumbi_score_bairros_latlon_2025.csv` | Score por bairro usando lat/lon. |
+| Análise 3.0 (bairros) | `analises/analise_3.0/morumbi_bairros_proximos_relatorio.md` | Relatório de bairros próximos e priorização para vídeos. |
+| Relatório HTML (Análise 3.0) | `analises/analise_3.0/morumbi_bairros_proximos_relatorio.html` | Visualização local no navegador. |
+| Script | `scripts/analise_bairros_morumbi_latlon.py` | Gera a análise 3.0 usando lat/lon. |
+| Scripts de apoio | `scripts/` | Padronização de dados, correções e scripts auxiliares. |
+| Bases de entrada | `data/filling_Ceps/` | CSVs com lat/lon e endereços preenchidos. |
 
 ---
 
-Estes arquivos trabalham em conjunto para:
-- 🧼 **Limpar e estruturar** dados censitários do IBGE;  
-- 📊 **Gerar estatísticas e indicadores** sobre renda e população;  
-- 📈 **Explorar correlações** e segmentar regiões com o algoritmo **K-means**;  
-- 🗺️ **Visualizar insights geográficos** de forma interativa, com mapas dinâmicos.  
+## Análises (resumo rápido)
+
+- **Análise 1.0**: visão socioeconômica com mapas interativos por renda e população.
+- **Análise 2.0**: score de tráfego por **CEP** com renda corrigida e crianças 0–9 anos.
+- **Análise 3.0**: score por **bairro** usando lat/lon + distância até a escola.
 
 ---
 
-## 📊 Fontes de dados
+## Fontes de dados
 
-- [Censo IBGE 2022 — Dados Demográficos](https://censo2022.ibge.gov.br/)  
+- [Censo IBGE 2022 — Dados Demográficos](https://censo2022.ibge.gov.br/)
 - [API IBGE — Indicadores Sociais e Econômicos](https://servicodados.ibge.gov.br/api/docs/)
 
 ---
 
-## 🎯 Objetivo
+## Objetivo
 
 Com base nas análises realizadas, busca-se **compreender melhor o perfil financeiro e populacional das regiões próximas às unidades escolares**, visando apoiar decisões estratégicas relacionadas à **captação de leads**, **precificação** e **expansão de mercado**.
 
 ---
 
-📍 *Projeto desenvolvido com foco em dados abertos, transparência e apoio à tomada de decisão estratégica na educação.*
+*Projeto desenvolvido com foco em dados abertos, transparência e apoio à tomada de decisão estratégica na educação.*
 
----
-
-✍️ **Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd)**  
-📅 São Paulo — 2025  
-💡 *Análise de Dados e Inteligência Educacional*
+Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd) — São Paulo, 2025
 
 ---
 
 ## O que mudou (Resumo das ações recentes)
 
-- **Atualização de caminhos CSV:** Notebooks em `analise_1.0/` agora usam caminhos relativos para os CSVs que estão na pasta raiz `filling_Ceps/`. Exemplo: `pd.read_csv('../filling_Ceps/Elvira Brandão Morumbi - ...csv')`.
-- **Restauração de notebooks:** Os notebooks `analise_financeira_morumbi.ipynb` e `analise_financeira_chacara.ipynb` foram recriados com estrutura JSON válida após sofrerem corrupção durante uma alteração de caminhos. Os novos arquivos contêm células mínimas de carregamento e exploração de dados para facilitar testes iniciais.
-- **Backups criados:** Antes da recriação foram gerados backups com timestamp (ex.: `analise_financeira_morumbi_backup_20251124_150557.ipynb` e `analise_financeira_chacara_backup_20251124_150557.ipynb`). Esses arquivos preservam o conteúdo corrompido para inspeção manual, se necessário.
-- **Scripts temporários limpos:** Scripts de correção temporários foram removidos da raiz do projeto após a restauração.
+- **Padronização de nomes**: arquivos renomeados com prefixos `morumbi_` e `chacara_`.
+- **Separação da análise de bairros**: novos outputs em `analises/analise_3.0/`.
+- **Limpeza de utilitários não usados**: scripts de PySpark removidos.
+- **Mapa do repositório**: guia rápido em `docs/MAPA_DO_REPO.md`.
 
 ---
 
 ## Como abrir e testar os notebooks (rápido)
 
-- **Pré-requisitos:** Python 3.10+ (o projeto foi testado em 3.13.5), e pacotes comuns como `pandas`, `numpy`, `matplotlib`, `seaborn`, `folium`. Para instalar dependências rapidamente, por exemplo:
+- **Pré-requisitos:** Python 3.10+ e pacotes como `pandas`, `numpy`, `matplotlib`, `seaborn`, `folium`.
 
 ```powershell
 python -m pip install pandas numpy matplotlib seaborn folium
 ```
 
-- **Abrir notebook:** No VS Code ou Jupyter, abra `analise_1.0/analise_financeira_morumbi.ipynb` ou `analise_1.0/analise_financeira_chacara.ipynb`.
-- **Executar a primeira célula de carregamento:** Ela usa `csv_path = '../filling_Ceps/<arquivo.csv>'` — verifique que os arquivos CSV relevantes estão em `filling_Ceps/` na raiz do repositório.
-- **Exemplo de verificação manual em Python:**
+- **Análise 1.0:** abra `analises/analise_1.0/morumbi_analise_financeira.ipynb` ou `analises/analise_1.0/chacara_analise_financeira.ipynb`.
+- **Análise 2.0:** abra `analises/analise_2.0/morumbi_analise_financeira_part2.ipynb` ou `analises/analise_2.0/chacara_analise_financeira_part2.ipynb`.
+- **Análise 3.0 (bairros):** execute o script abaixo para regenerar CSV e relatório:
 
-```python
-import pandas as pd
-df = pd.read_csv('../filling_Ceps/Elvira Brandão Morumbi - Euvira Brandão Dados ADS_coords_corrigidas_com_enderecos.csv')
-print(len(df), df.columns.tolist())
+```powershell
+python scripts/analise_bairros_morumbi_latlon.py --output-dir analises/analise_3.0
 ```
+
+Parâmetros úteis:
+- `--min-pontos`: mínimo de pontos por bairro no ranking.
+- `--top-n`: tamanho das listas de proximidade e score.
+- `--top-videos`: quantidade de bairros sugeridos para vídeos.
+- `--escola-lat` e `--escola-lon`: coordenadas da unidade.
 
 ---
 
 ## Backups & recuperação
 
-- Backups dos notebooks corrompidos estão localizados em `analise_1.0/` com sufixo `_backup_YYYYMMDD_HHMMSS.ipynb`. Recomendação: conservar esses arquivos até confirmar que as versões recriadas contém todo o conteúdo necessário.
-
-- Caso queira restaurar uma versão anterior completa, sugiro mover o backup para outro local e abrir no Jupyter Notebook para inspecionar manualmente.
+- Backups dos notebooks corrompidos estão localizados em `analises/analise_1.0/` com sufixo `_backup_YYYYMMDD_HHMMSS.ipynb`.
+- Caso queira restaurar uma versão anterior completa, mova o backup para outro local e abra no Jupyter Notebook para inspecionar manualmente.
 
 ---
 
 ## Observações e próximos passos sugeridos
 
-- **Verificar execução:** Execute as primeiras células dos dois notebooks recriados para confirmar que `pd.read_csv('../filling_Ceps/...')` carrega os CSVs corretamente. Relate qualquer `FileNotFoundError` com o caminho exato mostrado.
-- **Revisar conteúdo:** As versões recriadas são mínimas — se houver código perdido que precise ser retomado, abra os backups e copie trechos úteis manualmente.
-- **Commitar alterações:** Depois de validar localmente, recomendo commitar as mudanças e adicionar os notebooks ao controle de versão (se desejar incluir os notebooks completos no repositório). Exemplo de commit:
-
-```powershell
-git add README.md analise_1.0/analise_financeira_*.ipynb
-git commit -m "Atualiza README e restaura notebooks com caminhos relativos para filling_Ceps"
-```
-
----
+- **Mapa do repositório:** consulte `docs/MAPA_DO_REPO.md` para um guia rápido da estrutura atual.
+- **Verificar execução:** execute as primeiras células dos notebooks para confirmar que `pd.read_csv('../../data/filling_Ceps/...')` carrega os CSVs corretamente.
+- **Revisar conteúdo:** se houver código perdido, abra os backups e copie trechos úteis manualmente.
 
 Se quiser, eu posso:
-- Executar um teste rápido (rodar a célula de carregamento) em ambos os notebooks aqui e retornar o resultado; ou
+- Executar um teste rápido (rodar a célula de carregamento) em ambos os notebooks e retornar o resultado; ou
 - Extrair trechos dos backups para tentar reconstruir mais conteúdo automaticamente.
-
-Escolha qual dessas ações prefere que eu faça a seguir.

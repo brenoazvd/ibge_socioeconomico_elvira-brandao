@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relatorio de bairros proximos - Chacara</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; color: #222; }
+    h1, h2 { margin: 0 0 12px 0; }
+    p { margin: 6px 0; }
+    table { border-collapse: collapse; width: 100%; margin: 8px 0 24px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f3f3f3; }
+    .meta { color: #555; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <h1>Relatorio de bairros proximos - Chacara (lat/lon)</h1>
+  <p class="meta"><strong>Base:</strong> C:/Users/00157NLUC-BrenoR/ibge_socioeconomico_elvira-brandao/analises/analise_1.0/chacara_clusters.csv</p>
+  <p class="meta"><strong>Escola (lat, lon):</strong> -23.6336779, -46.7132727</p>
+  <p class="meta"><strong>Inflacao aplicada:</strong> 1.155</p>
+  <p class="meta"><strong>Minimo de pontos por bairro:</strong> 5</p>
+  <p class="meta"><strong>Coluna de bairro usada:</strong> Bairro</p>
+  <p class="meta"><strong>Formula do score:</strong> renda_mediana_2025 * criancas_0_9_mediana</p>
+  <h2>Bairros mais proximos (por distancia mediana)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Bairro</th>
+      <th>Distancia</th>
+      <th>Score</th>
+      <th>Renda mediana</th>
+      <th>Criancas 0-9</th>
+      <th>Populacao mediana</th>
+      <th>Pontos</th>
+      <th>Cluster predominante</th>
+      <th>Cluster share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Vila Cruzeiro</td>
+      <td>0.33 km</td>
+      <td>367917.61</td>
+      <td>R$ 11.320,54</td>
+      <td>32.50</td>
+      <td>423</td>
+      <td>22</td>
+      <td>2</td>
+      <td>0.41</td>
+    </tr>
+    <tr>
+      <td>Jardim Caravelas</td>
+      <td>0.67 km</td>
+      <td>244710.28</td>
+      <td>R$ 8.438,29</td>
+      <td>29.00</td>
+      <td>352</td>
+      <td>8</td>
+      <td>2</td>
+      <td>0.50</td>
+    </tr>
+    <tr>
+      <td>Jardim Fonte do Morumbi</td>
+      <td>0.88 km</td>
+      <td>735933.37</td>
+      <td>R$ 29.437,33</td>
+      <td>25.00</td>
+      <td>298</td>
+      <td>10</td>
+      <td>3</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>Chácara Santo Antônio (Zona Sul)</td>
+      <td>1.04 km</td>
+      <td>245975.85</td>
+      <td>R$ 11.440,74</td>
+      <td>21.50</td>
+      <td>348</td>
+      <td>32</td>
+      <td>2</td>
+      <td>0.53</td>
+    </tr>
+    <tr>
+      <td>Paraíso do Morumbi</td>
+      <td>1.28 km</td>
+      <td>483289.67</td>
+      <td>R$ 18.237,35</td>
+      <td>26.50</td>
+      <td>296</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <td>Jardim Vitória Régia</td>
+      <td>1.38 km</td>
+      <td>703602.49</td>
+      <td>R$ 19.819,79</td>
+      <td>35.50</td>
+      <td>368</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Granja Julieta</td>
+      <td>1.49 km</td>
+      <td>366022.64</td>
+      <td>R$ 15.250,94</td>
+      <td>24.00</td>
+      <td>294</td>
+      <td>5</td>
+      <td>0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Parque do Morumbi</td>
+      <td>1.74 km</td>
+      <td>460164.65</td>
+      <td>R$ 21.912,60</td>
+      <td>21.00</td>
+      <td>229</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <td>Jardim Morumbi</td>
+      <td>1.87 km</td>
+      <td>386750.20</td>
+      <td>R$ 22.750,01</td>
+      <td>17.00</td>
+      <td>222</td>
+      <td>13</td>
+      <td>3</td>
+      <td>0.46</td>
+    </tr>
+    <tr>
+      <td>Jardim Ampliação</td>
+      <td>1.93 km</td>
+      <td>437465.77</td>
+      <td>R$ 15.623,78</td>
+      <td>28.00</td>
+      <td>341</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Jardim Dom Bosco</td>
+      <td>2.03 km</td>
+      <td>1052868.18</td>
+      <td>R$ 15.952,55</td>
+      <td>66.00</td>
+      <td>518</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Jardim Santo Antônio</td>
+      <td>2.09 km</td>
+      <td>207596.93</td>
+      <td>R$ 2.594,96</td>
+      <td>80.00</td>
+      <td>613</td>
+      <td>7</td>
+      <td>1</td>
+      <td>0.57</td>
+    </tr>
+  </tbody>
+</table>
+  <h2>Top score trafego (bairros com mais potencial)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Bairro</th>
+      <th>Distancia</th>
+      <th>Score</th>
+      <th>Renda mediana</th>
+      <th>Criancas 0-9</th>
+      <th>Populacao mediana</th>
+      <th>Pontos</th>
+      <th>Cluster predominante</th>
+      <th>Cluster share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jardim Dom Bosco</td>
+      <td>2.03 km</td>
+      <td>1052868.18</td>
+      <td>R$ 15.952,55</td>
+      <td>66.00</td>
+      <td>518</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Jardim Fonte do Morumbi</td>
+      <td>0.88 km</td>
+      <td>735933.37</td>
+      <td>R$ 29.437,33</td>
+      <td>25.00</td>
+      <td>298</td>
+      <td>10</td>
+      <td>3</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>Jardim Vitória Régia</td>
+      <td>1.38 km</td>
+      <td>703602.49</td>
+      <td>R$ 19.819,79</td>
+      <td>35.50</td>
+      <td>368</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Vila Isa</td>
+      <td>4.38 km</td>
+      <td>533960.79</td>
+      <td>R$ 10.170,68</td>
+      <td>52.50</td>
+      <td>532</td>
+      <td>8</td>
+      <td>0</td>
+      <td>0.38</td>
+    </tr>
+    <tr>
+      <td>Real Parque</td>
+      <td>3.06 km</td>
+      <td>531242.34</td>
+      <td>R$ 16.345,92</td>
+      <td>32.50</td>
+      <td>420</td>
+      <td>30</td>
+      <td>0</td>
+      <td>0.57</td>
+    </tr>
+    <tr>
+      <td>Parque Colonial</td>
+      <td>4.06 km</td>
+      <td>512226.21</td>
+      <td>R$ 19.701,01</td>
+      <td>26.00</td>
+      <td>324</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.86</td>
+    </tr>
+    <tr>
+      <td>Chácara Monte Alegre</td>
+      <td>3.89 km</td>
+      <td>505752.14</td>
+      <td>R$ 15.804,75</td>
+      <td>32.00</td>
+      <td>488</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>Paraíso do Morumbi</td>
+      <td>1.28 km</td>
+      <td>483289.67</td>
+      <td>R$ 18.237,35</td>
+      <td>26.50</td>
+      <td>296</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <td>Parque do Morumbi</td>
+      <td>1.74 km</td>
+      <td>460164.65</td>
+      <td>R$ 21.912,60</td>
+      <td>21.00</td>
+      <td>229</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <td>Vila Andrade</td>
+      <td>2.61 km</td>
+      <td>460123.66</td>
+      <td>R$ 13.336,92</td>
+      <td>34.50</td>
+      <td>344</td>
+      <td>132</td>
+      <td>0</td>
+      <td>0.51</td>
+    </tr>
+    <tr>
+      <td>Vila Morumbi</td>
+      <td>2.40 km</td>
+      <td>457625.78</td>
+      <td>R$ 22.881,29</td>
+      <td>20.00</td>
+      <td>265</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Vila Congonhas</td>
+      <td>4.47 km</td>
+      <td>444990.36</td>
+      <td>R$ 13.087,95</td>
+      <td>34.00</td>
+      <td>328</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0.42</td>
+    </tr>
+  </tbody>
+</table>
+  <h2>Sugestao para videos (proximos + alto score)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Bairro</th>
+      <th>Distancia</th>
+      <th>Score</th>
+      <th>Renda mediana</th>
+      <th>Criancas 0-9</th>
+      <th>Populacao mediana</th>
+      <th>Pontos</th>
+      <th>Cluster predominante</th>
+      <th>Cluster share</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jardim Dom Bosco</td>
+      <td>2.03 km</td>
+      <td>1052868.18</td>
+      <td>R$ 15.952,55</td>
+      <td>66.00</td>
+      <td>518</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Jardim Fonte do Morumbi</td>
+      <td>0.88 km</td>
+      <td>735933.37</td>
+      <td>R$ 29.437,33</td>
+      <td>25.00</td>
+      <td>298</td>
+      <td>10</td>
+      <td>3</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>Jardim Vitória Régia</td>
+      <td>1.38 km</td>
+      <td>703602.49</td>
+      <td>R$ 19.819,79</td>
+      <td>35.50</td>
+      <td>368</td>
+      <td>6</td>
+      <td>0</td>
+      <td>1.00</td>
+    </tr>
+    <tr>
+      <td>Paraíso do Morumbi</td>
+      <td>1.28 km</td>
+      <td>483289.67</td>
+      <td>R$ 18.237,35</td>
+      <td>26.50</td>
+      <td>296</td>
+      <td>14</td>
+      <td>0</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <td>Parque do Morumbi</td>
+      <td>1.74 km</td>
+      <td>460164.65</td>
+      <td>R$ 21.912,60</td>
+      <td>21.00</td>
+      <td>229</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0.33</td>
+    </tr>
+    <tr>
+      <td>Jardim Ampliação</td>
+      <td>1.93 km</td>
+      <td>437465.77</td>
+      <td>R$ 15.623,78</td>
+      <td>28.00</td>
+      <td>341</td>
+      <td>21</td>
+      <td>0</td>
+      <td>0.71</td>
+    </tr>
+    <tr>
+      <td>Jardim Morumbi</td>
+      <td>1.87 km</td>
+      <td>386750.20</td>
+      <td>R$ 22.750,01</td>
+      <td>17.00</td>
+      <td>222</td>
+      <td>13</td>
+      <td>3</td>
+      <td>0.46</td>
+    </tr>
+    <tr>
+      <td>Vila Cruzeiro</td>
+      <td>0.33 km</td>
+      <td>367917.61</td>
+      <td>R$ 11.320,54</td>
+      <td>32.50</td>
+      <td>423</td>
+      <td>22</td>
+      <td>2</td>
+      <td>0.41</td>
+    </tr>
+  </tbody>
+</table>
+  <p class="meta">Observacao: o ranking usa mediana por bairro para reduzir ruido de outliers.</p>
+</body>
+</html>

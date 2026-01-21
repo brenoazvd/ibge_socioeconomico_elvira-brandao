@@ -1,0 +1,5 @@
+data/cache/
+data/backups/
+data/filling_Ceps/backups/
+__pycache__/
+*.pyc
