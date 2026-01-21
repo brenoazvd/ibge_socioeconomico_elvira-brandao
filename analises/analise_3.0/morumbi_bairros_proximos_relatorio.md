@@ -21,7 +21,7 @@ Formula do score (nivel bairro): renda_mediana_2025 * criancas_0_9_mediana
 | Jardim Parque Morumbi | 1.07 km | 430611.35 | R$ 8.971,07 | 48.00 | 334 | 11 | 0 | 0.55 |
 | Paraisópolis | 1.28 km | 213800.57 | R$ 2.026,55 | 105.50 | 658 | 102 | 1 | 0.47 |
 | Jardim Ampliação | 1.35 km | 437465.77 | R$ 15.623,78 | 28.00 | 341 | 21 | 2 | 0.57 |
-| Jardim Taboão | 1.40 km | 118870.84 | R$ 5.660,52 | 21.00 | 352 | 13 | 0 | 0.77 |
+| Jardim Taboão | 1.38 km | 144159.25 | R$ 6.006,64 | 24.00 | 353 | 11 | 0 | 0.73 |
 | Parque Reboucas | 1.41 km | 206396.54 | R$ 3.752,66 | 55.00 | 422 | 27 | 3 | 0.44 |
 
 ## Top score trafego (bairros com mais potencial)

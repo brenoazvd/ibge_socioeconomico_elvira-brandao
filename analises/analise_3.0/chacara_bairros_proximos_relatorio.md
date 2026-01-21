@@ -11,45 +11,45 @@ Formula do score (nivel bairro): renda_mediana_2025 * criancas_0_9_mediana
 ## Bairros mais proximos (por distancia mediana)
 | Bairro | distancia_mediana_km | score_trafego_2025 | renda_mediana_2025 | criancas_0_9_mediana | populacao_mediana | pontos | cluster_predominante | cluster_share |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Vila Cruzeiro | 0.33 km | 367917.61 | R$ 11.320,54 | 32.50 | 423 | 22 | 2 | 0.41 |
-| Jardim Caravelas | 0.67 km | 244710.28 | R$ 8.438,29 | 29.00 | 352 | 8 | 2 | 0.50 |
-| Jardim Fonte do Morumbi | 0.88 km | 735933.37 | R$ 29.437,33 | 25.00 | 298 | 10 | 3 | 0.80 |
-| Chácara Santo Antônio (Zona Sul) | 1.04 km | 245975.85 | R$ 11.440,74 | 21.50 | 348 | 32 | 2 | 0.53 |
-| Paraíso do Morumbi | 1.28 km | 483289.67 | R$ 18.237,35 | 26.50 | 296 | 14 | 0 | 0.43 |
-| Jardim Vitória Régia | 1.38 km | 703602.49 | R$ 19.819,79 | 35.50 | 368 | 6 | 0 | 1.00 |
-| Granja Julieta | 1.49 km | 366022.64 | R$ 15.250,94 | 24.00 | 294 | 5 | 0 | 1.00 |
-| Parque do Morumbi | 1.74 km | 460164.65 | R$ 21.912,60 | 21.00 | 229 | 6 | 0 | 0.33 |
-| Jardim Morumbi | 1.87 km | 386750.20 | R$ 22.750,01 | 17.00 | 222 | 13 | 3 | 0.46 |
-| Jardim Ampliação | 1.93 km | 437465.77 | R$ 15.623,78 | 28.00 | 341 | 21 | 0 | 0.71 |
-| Jardim Dom Bosco | 2.03 km | 1052868.18 | R$ 15.952,55 | 66.00 | 518 | 7 | 0 | 0.71 |
-| Jardim Santo Antônio | 2.09 km | 207596.93 | R$ 2.594,96 | 80.00 | 613 | 7 | 1 | 0.57 |
+| Vila Cruzeiro | 0.33 km | 31538444.44 | R$ 970.413,68 | 32.50 | 423 | 22 | 2 | 0.41 |
+| Jardim Caravelas | 0.67 km | 19678161.77 | R$ 678.557,30 | 29.00 | 352 | 8 | 2 | 0.50 |
+| Jardim Fonte do Morumbi | 0.88 km | 73593337.13 | R$ 2.943.733,49 | 25.00 | 298 | 10 | 3 | 0.90 |
+| Chácara Santo Antônio (Zona Sul) | 1.04 km | 24597584.55 | R$ 1.144.073,70 | 21.50 | 348 | 32 | 1 | 0.53 |
+| Paraíso do Morumbi | 1.28 km | 48328967.03 | R$ 1.823.734,60 | 26.50 | 296 | 14 | 1 | 0.50 |
+| Jardim Vitória Régia | 1.38 km | 38905878.16 | R$ 1.095.940,23 | 35.50 | 368 | 6 | 1 | 0.33 |
+| Granja Julieta | 1.49 km | 36602264.16 | R$ 1.525.094,34 | 24.00 | 294 | 5 | 1 | 0.80 |
+| Parque do Morumbi | 1.74 km | 26322435.56 | R$ 1.253.449,31 | 21.00 | 229 | 6 | 2 | 0.50 |
+| Jardim Morumbi | 1.87 km | 23148408.36 | R$ 1.361.671,08 | 17.00 | 222 | 13 | 1 | 0.31 |
+| Jardim Ampliação | 1.93 km | 43746576.72 | R$ 1.562.377,74 | 28.00 | 341 | 21 | 1 | 0.71 |
+| Jardim Dom Bosco | 2.03 km | 105286817.79 | R$ 1.595.254,81 | 66.00 | 518 | 7 | 1 | 0.71 |
+| Jardim Santo Antônio | 2.09 km | 20759692.80 | R$ 259.496,16 | 80.00 | 613 | 7 | 0 | 0.57 |
 
 ## Top score trafego (bairros com mais potencial)
 | Bairro | distancia_mediana_km | score_trafego_2025 | renda_mediana_2025 | criancas_0_9_mediana | populacao_mediana | pontos | cluster_predominante | cluster_share |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Jardim Dom Bosco | 2.03 km | 1052868.18 | R$ 15.952,55 | 66.00 | 518 | 7 | 0 | 0.71 |
-| Jardim Fonte do Morumbi | 0.88 km | 735933.37 | R$ 29.437,33 | 25.00 | 298 | 10 | 3 | 0.80 |
-| Jardim Vitória Régia | 1.38 km | 703602.49 | R$ 19.819,79 | 35.50 | 368 | 6 | 0 | 1.00 |
-| Vila Isa | 4.38 km | 533960.79 | R$ 10.170,68 | 52.50 | 532 | 8 | 0 | 0.38 |
-| Real Parque | 3.06 km | 531242.34 | R$ 16.345,92 | 32.50 | 420 | 30 | 0 | 0.57 |
-| Parque Colonial | 4.06 km | 512226.21 | R$ 19.701,01 | 26.00 | 324 | 7 | 0 | 0.86 |
-| Chácara Monte Alegre | 3.89 km | 505752.14 | R$ 15.804,75 | 32.00 | 488 | 5 | 0 | 0.80 |
-| Paraíso do Morumbi | 1.28 km | 483289.67 | R$ 18.237,35 | 26.50 | 296 | 14 | 0 | 0.43 |
-| Parque do Morumbi | 1.74 km | 460164.65 | R$ 21.912,60 | 21.00 | 229 | 6 | 0 | 0.33 |
-| Vila Andrade | 2.61 km | 460123.66 | R$ 13.336,92 | 34.50 | 344 | 132 | 0 | 0.51 |
-| Vila Morumbi | 2.40 km | 457625.78 | R$ 22.881,29 | 20.00 | 265 | 7 | 0 | 0.71 |
-| Vila Congonhas | 4.47 km | 444990.36 | R$ 13.087,95 | 34.00 | 328 | 13 | 0 | 0.42 |
+| Jardim Dom Bosco | 2.03 km | 105286817.79 | R$ 1.595.254,81 | 66.00 | 518 | 7 | 1 | 0.71 |
+| Jardim Fonte do Morumbi | 0.88 km | 73593337.13 | R$ 2.943.733,49 | 25.00 | 298 | 10 | 3 | 0.90 |
+| Real Parque | 3.06 km | 51312730.22 | R$ 1.578.853,24 | 32.50 | 420 | 30 | 1 | 0.47 |
+| Parque Colonial | 4.06 km | 51222621.45 | R$ 1.970.100,82 | 26.00 | 324 | 7 | 1 | 0.86 |
+| Chácara Monte Alegre | 3.89 km | 50575213.92 | R$ 1.580.475,44 | 32.00 | 488 | 5 | 1 | 0.80 |
+| Paraíso do Morumbi | 1.28 km | 48328967.03 | R$ 1.823.734,60 | 26.50 | 296 | 14 | 1 | 0.50 |
+| Vila Isa | 4.38 km | 44810688.04 | R$ 853.536,92 | 52.50 | 532 | 8 | 1 | 0.50 |
+| Vila Congonhas | 4.47 km | 44499036.12 | R$ 1.308.795,18 | 34.00 | 328 | 13 | 1 | 0.42 |
+| Jardim Ampliação | 1.93 km | 43746576.72 | R$ 1.562.377,74 | 28.00 | 341 | 21 | 1 | 0.71 |
+| Jardim Petrópolis | 3.14 km | 43391827.71 | R$ 1.205.328,55 | 36.00 | 404 | 6 | 1 | 0.83 |
+| Vila Andrade | 2.61 km | 42504092.98 | R$ 1.232.002,69 | 34.50 | 344 | 132 | 1 | 0.53 |
+| Vila Morumbi | 2.40 km | 42291872.70 | R$ 2.114.593,64 | 20.00 | 265 | 7 | 3 | 0.43 |
 
 ## Sugestao para videos (proximos + alto score)
 | Bairro | distancia_mediana_km | score_trafego_2025 | renda_mediana_2025 | criancas_0_9_mediana | populacao_mediana | pontos | cluster_predominante | cluster_share |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Jardim Dom Bosco | 2.03 km | 1052868.18 | R$ 15.952,55 | 66.00 | 518 | 7 | 0 | 0.71 |
-| Jardim Fonte do Morumbi | 0.88 km | 735933.37 | R$ 29.437,33 | 25.00 | 298 | 10 | 3 | 0.80 |
-| Jardim Vitória Régia | 1.38 km | 703602.49 | R$ 19.819,79 | 35.50 | 368 | 6 | 0 | 1.00 |
-| Paraíso do Morumbi | 1.28 km | 483289.67 | R$ 18.237,35 | 26.50 | 296 | 14 | 0 | 0.43 |
-| Parque do Morumbi | 1.74 km | 460164.65 | R$ 21.912,60 | 21.00 | 229 | 6 | 0 | 0.33 |
-| Jardim Ampliação | 1.93 km | 437465.77 | R$ 15.623,78 | 28.00 | 341 | 21 | 0 | 0.71 |
-| Jardim Morumbi | 1.87 km | 386750.20 | R$ 22.750,01 | 17.00 | 222 | 13 | 3 | 0.46 |
-| Vila Cruzeiro | 0.33 km | 367917.61 | R$ 11.320,54 | 32.50 | 423 | 22 | 2 | 0.41 |
+| Jardim Dom Bosco | 2.03 km | 105286817.79 | R$ 1.595.254,81 | 66.00 | 518 | 7 | 1 | 0.71 |
+| Jardim Fonte do Morumbi | 0.88 km | 73593337.13 | R$ 2.943.733,49 | 25.00 | 298 | 10 | 3 | 0.90 |
+| Paraíso do Morumbi | 1.28 km | 48328967.03 | R$ 1.823.734,60 | 26.50 | 296 | 14 | 1 | 0.50 |
+| Jardim Ampliação | 1.93 km | 43746576.72 | R$ 1.562.377,74 | 28.00 | 341 | 21 | 1 | 0.71 |
+| Jardim Vitória Régia | 1.38 km | 38905878.16 | R$ 1.095.940,23 | 35.50 | 368 | 6 | 1 | 0.33 |
+| Granja Julieta | 1.49 km | 36602264.16 | R$ 1.525.094,34 | 24.00 | 294 | 5 | 1 | 0.80 |
+| Vila Cruzeiro | 0.33 km | 31538444.44 | R$ 970.413,68 | 32.50 | 423 | 22 | 2 | 0.41 |
+| Parque do Morumbi | 1.74 km | 26322435.56 | R$ 1.253.449,31 | 21.00 | 229 | 6 | 2 | 0.50 |
 
 Observacao: o ranking usa mediana por bairro para reduzir ruido de outliers.
