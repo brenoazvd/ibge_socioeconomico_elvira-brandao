@@ -513,7 +513,12 @@ def main() -> int:
             print("Analise 3.0 nao executada (unidade filtrada).")
             print("Done.")
             return 0
-        script_path = base_dir / "scripts" / "analise_bairros_morumbi_latlon.py"
+        script_path = (
+            base_dir
+            / "analises"
+            / "analise_3.0"
+            / "analise_bairros_chacara_morumbi.py"
+        )
         if script_path.exists():
             import subprocess
 

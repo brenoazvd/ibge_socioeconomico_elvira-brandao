@@ -16,17 +16,17 @@ Objetivo: facilitar onde estao as analises, dados e scripts ativos.
 - `analises/analise_1.0/chacara_analise_financeira.ipynb`
 - `analises/analise_2.0/morumbi_analise_financeira_part2.ipynb`
 - `analises/analise_2.0/chacara_analise_financeira_part2.ipynb`
-- `analises/analise_3.0/morumbi_score_bairros_latlon_2025.csv`
+- `analises/analise_3.0/morumbi_score_bairros_latlon_2026.csv`
 - `analises/analise_3.0/morumbi_bairros_proximos_relatorio.md`
 - `analises/analise_3.0/morumbi_bairros_proximos_relatorio.html`
 - `analises/analise_3.0/README.md`
 - `scripts/_datasets.py`
-- `scripts/analise_bairros_morumbi_latlon.py`
+- `analises/analise_3.0/analise_bairros_chacara_morumbi.py`
 - `scripts/atualizar_enderecos_openaddresses.py`
 
 ## Rodar analise de bairros (lat/lon)
 ```
-python scripts/analise_bairros_morumbi_latlon.py --output-dir analises/analise_3.0
+python analises/analise_3.0/analise_bairros_chacara_morumbi.py --output-dir analises/analise_3.0
 ```
 
 Parametros uteis:

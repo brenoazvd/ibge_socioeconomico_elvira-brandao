@@ -3,3 +3,7 @@ data/backups/
 data/filling_Ceps/backups/
 __pycache__/
 *.pyc
+# Generated analysis outputs
+analises/**/*.html
+analises/**/*.csv
+analises/**/out/

@@ -26,12 +26,12 @@ O repositório está organizado em notebooks e arquivos complementares que docum
 | Mapa interativo | `analises/analise_1.0/chacara_mapa_interativo.html` | Mapa da renda e população no entorno da Chácara. |
 | Notebook (Análise 2.0) | `analises/analise_2.0/morumbi_analise_financeira_part2.ipynb` | Score de tráfego por CEP (Morumbi). |
 | Notebook (Análise 2.0) | `analises/analise_2.0/chacara_analise_financeira_part2.ipynb` | Score de tráfego por CEP (Chácara). |
-| Ranking por CEP | `analises/analise_2.0/morumbi_top_ceps_2025.csv` | CEPs ranqueados por score (Morumbi). |
-| Ranking por CEP | `analises/analise_2.0/chacara_top_ceps_2025.csv` | CEPs ranqueados por score (Chácara). |
-| Análise 3.0 (bairros) | `analises/analise_3.0/morumbi_score_bairros_latlon_2025.csv` | Score por bairro usando lat/lon. |
+| Ranking por CEP | `analises/analise_2.0/morumbi_top_ceps_2026.csv` | CEPs ranqueados por score (Morumbi). |
+| Ranking por CEP | `analises/analise_2.0/chacara_top_ceps_2026.csv` | CEPs ranqueados por score (Chácara). |
+| Análise 3.0 (bairros) | `analises/analise_3.0/morumbi_score_bairros_latlon_2026.csv` | Score por bairro usando lat/lon. |
 | Análise 3.0 (bairros) | `analises/analise_3.0/morumbi_bairros_proximos_relatorio.md` | Relatório de bairros próximos e priorização para vídeos. |
 | Relatório HTML (Análise 3.0) | `analises/analise_3.0/morumbi_bairros_proximos_relatorio.html` | Visualização local no navegador. |
-| Script | `scripts/analise_bairros_morumbi_latlon.py` | Gera a análise 3.0 usando lat/lon. |
+| Script | `analises/analise_3.0/analise_bairros_chacara_morumbi.py` | Gera a análise 3.0 usando lat/lon. |
 | Scripts de apoio | `scripts/` | Padronização de dados, correções e scripts auxiliares. |
 | Bases de entrada | `data/filling_Ceps/` | CSVs com lat/lon e endereços preenchidos. |
 
@@ -42,6 +42,41 @@ O repositório está organizado em notebooks e arquivos complementares que docum
 - **Análise 1.0**: visão socioeconômica com mapas interativos por renda e população.
 - **Análise 2.0**: score de tráfego por **CEP** com renda corrigida e crianças 0–9 anos.
 - **Análise 3.0**: score por **bairro** usando lat/lon + distância até a escola.
+
+---
+
+## Pipeline (processo completo)
+
+1) **Base bruta**  
+   - `data/base_bruta.csv`
+
+2) **Correção de lat/lon**  
+   - Script: `scripts/corrigir_latlon.py`  
+   - Saída: `data/base_coords_corrigidas.csv`
+
+3) **Enriquecimento de endereços e CEPs**  
+   - Script: `scripts/atualizar_enderecos_openaddresses.py`  
+   - Saída: `data/base_principal.csv` (base oficial usada nas análises)
+
+4) **Análise 1.0 (mapas e clusters)**  
+   - Notebooks:  
+     - `analises/analise_1.0/morumbi_analise_financeira.ipynb`  
+     - `analises/analise_1.0/chacara_analise_financeira.ipynb`  
+   - Saídas: mapas HTML e `*_clusters.csv`
+
+5) **Análise 2.0 (CEPs e score)**  
+   - Notebooks:  
+     - `analises/analise_2.0/morumbi_analise_financeira_part2.ipynb`  
+     - `analises/analise_2.0/chacara_analise_financeira_part2.ipynb`  
+   - Relatórios HTML:  
+     - `analises/analise_2.0/ceps_relatorio_morumbi_2026.html`  
+     - `analises/analise_2.0/ceps_relatorio_chacara_2026.html`
+
+6) **Análise 3.0 (bairros e score)**  
+   - Script: `analises/analise_3.0/analise_bairros_chacara_morumbi.py`  
+   - Saídas:  
+     - `analises/analise_3.0/*_score_bairros_latlon_2026.csv`  
+     - `analises/analise_3.0/*_bairros_proximos_relatorio.{md,html}`
 
 ---
 
@@ -60,7 +95,7 @@ Com base nas análises realizadas, busca-se **compreender melhor o perfil financ
 
 *Projeto desenvolvido com foco em dados abertos, transparência e apoio à tomada de decisão estratégica na educação.*
 
-Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd) — São Paulo, 2025
+Feito por [Breno Rodrigues Azevedo](https://github.com/brenoazvd) — São Paulo, 2026
 
 ---
 
@@ -86,7 +121,7 @@ python -m pip install pandas numpy matplotlib seaborn folium
 - **Análise 3.0 (bairros):** execute o script abaixo para regenerar CSV e relatório:
 
 ```powershell
-python scripts/analise_bairros_morumbi_latlon.py --output-dir analises/analise_3.0
+python analises/analise_3.0/analise_bairros_chacara_morumbi.py --output-dir analises/analise_3.0
 ```
 
 Parâmetros úteis:
